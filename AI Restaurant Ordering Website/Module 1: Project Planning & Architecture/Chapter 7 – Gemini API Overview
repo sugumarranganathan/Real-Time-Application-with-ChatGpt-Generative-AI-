@@ -1,0 +1,491 @@
+Module 1: Project Planning
+Chapter 7: Gemini API Overview
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is Gemini?
+
+Gemini is Google's Generative AI model developed by Google DeepMind.
+
+It understands natural language and generates human-like responses.
+
+Gemini can:
+
+Answer questions
+Write code
+Summarize documents
+Translate languages
+Recommend products
+Analyze text
+Help customers
+Generate creative content
+
+In our project, Gemini acts as the AI Restaurant Assistant.
+
+2. Why Do We Need Gemini?
+
+Imagine a restaurant website without AI.
+
+Customer:
+
+What is today's special?
+
+Website:
+
+❌ Cannot answer unless a programmer writes code.
+
+With Gemini:
+
+Customer:
+
+What is today's special?
+
+Gemini:
+
+Today's special is Chicken Biryani with Fresh Lime Juice.
+
+No manual coding is needed for every possible question.
+
+3. Traditional Programming vs Gemini AI
+Traditional Programming
+Customer
+      │
+      ▼
+Programmer writes
+1000 IF statements
+      │
+      ▼
+Program gives answer
+
+Example
+
+if question == "Pizza":
+    print("₹250")
+elif question == "Burger":
+    print("₹180")
+elif question == "Biryani":
+    print("₹320")
+
+If the customer asks:
+
+Suggest dinner under ₹300.
+
+You must write additional code.
+
+Gemini AI
+Customer
+      │
+      ▼
+Gemini Understands
+Question
+      │
+      ▼
+AI Generates Answer
+
+No need to write hundreds of if conditions.
+
+4. Real-Time Example
+
+Customer asks
+
+I am vegetarian. Recommend dinner under ₹300.
+
+Gemini understands:
+
+Vegetarian
+Dinner
+Budget ₹300
+
+Response:
+
+I recommend:
+
+• Veg Fried Rice – ₹220
+
+• Fresh Lime Juice – ₹80
+
+Total ₹300
+5. Why Restaurants Use AI
+
+Restaurants receive questions like:
+
+Menu
+Price
+Offers
+Delivery
+Timings
+Reservation
+Table Availability
+
+Instead of staff answering repeatedly,
+
+Gemini answers automatically.
+
+6. Gemini in Our Project
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Flask Backend
+      │
+      ▼
+Gemini API
+      │
+      ▼
+AI Response
+      │
+      ▼
+Customer
+
+Gemini becomes the "brain" of the chatbot.
+
+7. What is an API?
+
+Gemini runs on Google's cloud servers.
+
+Our Flask application communicates with Gemini using an API.
+
+Flask
+
+↓
+
+Internet
+
+↓
+
+Gemini API
+
+↓
+
+AI Response
+
+The API allows our application to ask questions and receive answers.
+
+8. Gemini API Workflow
+Customer
+
+↓
+
+Website
+
+↓
+
+Flask
+
+↓
+
+Gemini API
+
+↓
+
+Google AI Server
+
+↓
+
+AI Response
+
+↓
+
+Flask
+
+↓
+
+Website
+
+↓
+
+Customer
+9. Real-Time Communication
+
+Customer asks
+
+Recommend pizza.
+
+Flask sends
+
+Recommend pizza.
+
+Gemini replies
+
+I recommend Margherita Pizza.
+
+Price ₹250.
+
+Flask displays the answer on the website.
+
+10. Gemini API Key
+
+To access Gemini,
+
+Google provides an API Key.
+
+Example
+
+AIzaSyXXXXXXXXXXXX
+
+This key identifies your application.
+
+Without it,
+
+Gemini will reject requests.
+
+11. Why Keep API Keys Secret?
+
+Wrong
+
+api_key="AIzaSy123456"
+
+Anyone can copy it.
+
+Correct
+
+.env
+
+↓
+
+GEMINI_API_KEY=AIzaSyXXXXXXXX
+
+Python reads the key from .env.
+
+This is the industry-standard approach.
+
+12. Prompt
+
+A Prompt is the instruction sent to Gemini.
+
+Example
+
+Suggest dinner under ₹300.
+
+Gemini generates the response.
+
+Another example
+
+Explain today's offers.
+13. Prompt Engineering
+
+Prompt Engineering means writing clear instructions.
+
+Poor Prompt
+
+Food
+
+Good Prompt
+
+Recommend a vegetarian dinner
+under ₹300 with one beverage.
+
+Better prompts usually produce better responses.
+
+14. Restaurant Knowledge
+
+Gemini can use restaurant information such as:
+
+Menu
+Prices
+Offers
+Timings
+Address
+Contact Details
+
+Example
+
+Menu
+
+↓
+
+Gemini
+
+↓
+
+Customer Questions
+15. Future Knowledge Base
+
+Later in this project,
+
+we can provide Gemini with information like:
+
+Restaurant Menu
+
+Today's Offers
+
+Delivery Policy
+
+Refund Policy
+
+Opening Hours
+
+Special Discounts
+
+Festival Menu
+
+Gemini will answer based on this information.
+
+16. Why Use Gemini Instead of OpenAI?
+
+For this course,
+
+we choose Gemini because:
+
+Free tier available for learning
+Easy Python integration
+Good documentation
+Works well with Flask
+Suitable for website chatbots
+Easy to deploy on Replit
+
+
+17. Gemini Features
+
+| Feature                 | Use in Our Project            |
+| ----------------------- | ----------------------------- |
+| Chat                    | Customer Support              |
+| Question Answering      | Menu & Restaurant Information |
+| Recommendations         | Food Suggestions              |
+| Text Generation         | Friendly Replies              |
+| Multi-turn Conversation | Continue Chat Naturally       |
+
+
+===========
+
+18. Future AI Features
+
+Later we can extend the chatbot to:
+
+Suggest combo meals
+Recommend food based on budget
+Recommend vegetarian/non-vegetarian dishes
+Suggest desserts
+Explain nutrition information
+Answer FAQs
+Collect customer feedback
+19. Complete Gemini Workflow
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Flask Backend
+      │
+      ▼
+Gemini API
+      │
+      ▼
+Google AI
+      │
+      ▼
+Generate Response
+      │
+      ▼
+Flask
+      │
+      ▼
+Website
+      │
+      ▼
+Customer
+20. Learning Outcome
+
+After completing this chapter, you will understand:
+
+What Gemini is
+Why Gemini is used
+Gemini API
+API Key
+Prompt
+Prompt Engineering
+Gemini Workflow
+Restaurant AI Assistant
+Gemini Integration Concept
+Assignment (With Answers)
+Question 1
+What is Gemini?
+
+Answer:
+
+Gemini is Google's Generative AI model developed by Google DeepMind. It understands natural language and generates intelligent responses.
+
+Question 2
+Why are we using Gemini in this project?
+
+Answer:
+
+To answer customer questions, recommend food, assist with ordering, and provide an intelligent conversational experience.
+
+Question 3
+What is a Prompt?
+
+Answer:
+
+A Prompt is the instruction or question sent to Gemini.
+
+Example:
+
+Recommend vegetarian dinner under ₹300.
+
+Question 4
+What is Prompt Engineering?
+
+Answer:
+
+Prompt Engineering is the practice of writing clear and specific prompts to get better AI responses.
+
+Question 5
+Where should the Gemini API Key be stored?
+
+Answer:
+
+Inside the .env file.
+
+Question 6
+Which component communicates with Gemini?
+
+Answer:
+
+The Flask backend communicates with the Gemini API.
+
+Question 7
+Draw the Gemini communication flow.
+
+Answer:
+
+Customer
+    │
+    ▼
+Restaurant Website
+    │
+    ▼
+Flask Backend
+    │
+    ▼
+Gemini API
+    │
+    ▼
+Google AI
+    │
+    ▼
+Flask
+    │
+    ▼
+Restaurant Website
+    │
+    ▼
+Customer
+
+===========
+
+Real-World Applications of Gemini
+----------------------------------
+
+
+
+
+
+
+
+
+
