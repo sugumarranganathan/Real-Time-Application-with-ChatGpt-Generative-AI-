@@ -1,0 +1,556 @@
+Module 1: Project Planning
+Chapter 4: REST API Fundamentals
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is an API?
+
+API stands for Application Programming Interface.
+
+An API is a bridge that allows two different applications to communicate with each other.
+
+Think of it as a waiter in a restaurant.
+
+Customer → Gives order
+Waiter → Takes order to kitchen
+Kitchen → Prepares food
+Waiter → Brings food back
+
+The waiter is like an API.
+
+2. Real-Time Example
+
+Imagine a customer visits your restaurant website.
+
+Customer types:
+
+Show today's special.
+
+The request travels like this:
+
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Flask API
+      │
+      ▼
+Gemini AI
+      │
+      ▼
+Flask API
+      │
+      ▼
+Website
+      │
+      ▼
+Customer
+
+The Flask API acts as the bridge between the website and Gemini AI.
+
+3. Why Do We Need APIs?
+
+Without an API:
+
+Website
+
+❌ Cannot communicate with Gemini
+
+Without an API:
+
+No chatbot
+No food recommendations
+No order processing
+No AI responses
+
+With an API:
+
+Website
+
+↓
+
+API
+
+↓
+
+Gemini
+
+↓
+
+Response
+
+Everything works smoothly.
+
+4. REST API
+
+REST stands for
+
+Representational State Transfer
+
+A REST API follows standard web communication rules.
+
+It allows applications to exchange data over HTTP.
+
+Example:
+
+Website
+
+↓
+
+HTTP Request
+
+↓
+
+Flask REST API
+
+↓
+
+HTTP Response
+
+↓
+
+Website
+5. API Endpoints
+
+An API contains different endpoints.
+
+Each endpoint performs a specific task.
+
+Example:
+
+| Endpoint   | Purpose            |
+| ---------- | ------------------ |
+| `/`        | Home Page          |
+| `/menu`    | Show Menu          |
+| `/special` | Today's Special    |
+| `/chat`    | AI Chatbot         |
+| `/order`   | Place Order        |
+| `/contact` | Restaurant Contact |
+
+
+====
+
+6. API Request
+
+A Request means:
+
+Asking the server to perform a task.
+
+Example:
+
+Customer:
+
+Show pizza menu.
+
+Browser sends
+
+Request
+
+↓
+
+/menu
+
+Flask receives the request.
+
+7. API Response
+
+A Response is the answer returned by the server.
+
+Example
+
+Customer asks
+
+Show Menu
+
+Flask returns
+
+Veg Pizza
+
+Chicken Burger
+
+Veg Fried Rice
+
+Fresh Lime Juice
+8. GET Request
+
+GET is used to retrieve information.
+
+Example:
+
+/menu
+
+↓
+
+Returns Menu
+
+Other examples:
+
+/contact
+
+↓
+
+Returns Contact Details
+/about
+
+↓
+
+Returns Restaurant Information
+9. POST Request
+
+POST is used to send data to the server.
+
+Example:
+
+Customer places an order.
+
+Customer
+
+↓
+
+Name
+
+Phone
+
+Address
+
+Food
+
+↓
+
+POST
+
+↓
+
+Flask
+
+Flask stores the order.
+
+10. GET vs POST
+Feature	GET	POST
+Purpose	Retrieve Data	Send Data
+Used For	Menu, Contact, About	Orders, Chat Messages
+Data	URL	Request Body
+Changes Server Data	No	Yes
+11. Restaurant API Examples
+Get Menu
+GET /menu
+
+Response
+
+Veg Pizza
+
+Chicken Burger
+
+Fried Rice
+Chat with AI
+POST /chat
+
+Request
+
+Question:
+
+Suggest dinner under ₹300.
+
+Response
+
+Chicken Burger
+
+Fresh Lime Juice
+
+₹260
+Place Order
+POST /order
+
+Request
+
+Name
+
+Sugumar
+
+Phone
+
+9876543210
+
+Food
+
+Chicken Burger
+
+Response
+
+Order Confirmed
+12. API Communication Flow
+Customer
+      │
+      ▼
+Website
+      │
+      ▼
+HTTP Request
+      │
+      ▼
+Flask API
+      │
+      ▼
+Gemini
+      │
+      ▼
+HTTP Response
+      │
+      ▼
+Website
+      │
+      ▼
+Customer
+
+=====
+
+13. Future APIs
+
+During this course we will build APIs like:
+
+| API          | Purpose             |
+| ------------ | ------------------- |
+| `/menu`      | View Menu           |
+| `/chat`      | AI Chatbot          |
+| `/recommend` | Food Recommendation |
+| `/order`     | Place Order         |
+| `/status`    | Check Order Status  |
+| `/feedback`  | Customer Feedback   |
+
+
+====
+
+14. Real-Time Restaurant Workflow
+
+Customer:
+
+I want Chicken Burger.
+
+Customer
+
+↓
+
+Website
+
+↓
+
+POST /order
+
+↓
+
+Flask
+
+↓
+
+Store Order
+
+↓
+
+Success Message
+
+↓
+
+Customer
+
+Customer:
+
+Recommend food.
+
+Customer
+
+↓
+
+Website
+
+↓
+
+POST /chat
+
+↓
+
+Gemini
+
+↓
+
+Recommendation
+
+↓
+
+Customer
+15. Why Flask APIs?
+
+Flask APIs make our website intelligent.
+
+Responsibilities:
+
+Receive requests
+Validate data
+Call Gemini AI
+Process orders
+Return responses
+Store customer information
+
+Without Flask APIs:
+
+Website
+
+↓
+
+No AI
+
+↓
+
+No Orders
+16. Learning Outcome
+
+After completing this chapter, you will understand:
+
+What an API is
+REST API concept
+API endpoints
+GET requests
+POST requests
+Request and Response
+API communication in a restaurant website
+Assignment (With Answers)
+Question 1
+What is an API?
+
+Answer:
+
+An API (Application Programming Interface) is a bridge that allows two applications to communicate with each other.
+
+Question 2
+What is REST API?
+
+Answer:
+
+REST API is a standard way for applications to exchange data over HTTP using methods like GET and POST.
+
+Question 3
+Which request is used to retrieve data?
+
+Answer:
+
+GET request.
+
+Question 4
+Which request is used to send data?
+
+Answer:
+
+POST request.
+
+Question 5
+Which API will communicate with Gemini?
+
+Answer:
+
+The /chat API.
+
+Question 6
+Which API will store customer orders?
+
+Answer:
+
+The /order API.
+
+Question 7
+Draw the API workflow.
+
+Answer:
+
+Customer
+    │
+    ▼
+Website
+    │
+    ▼
+HTTP Request
+    │
+    ▼
+Flask API
+    │
+    ▼
+Gemini AI
+    │
+    ▼
+HTTP Response
+    │
+    ▼
+Website
+    │
+    ▼
+Customer
+
+===================
+
+Real-World APIs We Use Every Day
+--------------------------------
+
+| Application | API Usage                      |
+| ----------- | ------------------------------ |
+| Swiggy      | Restaurant Menu API, Order API |
+| Zomato      | Restaurant Search API          |
+| Google Maps | Location API                   |
+| Google Pay  | Payment API                    |
+| WhatsApp    | Messaging API                  |
+| Gmail       | Email API                      |
+| Weather App | Weather API                    |
+
+
+Our restaurant website will work in a similar way by exposing APIs for menu browsing, AI chat, and order placement.
+
+=================
+
+Chapter Summary
+Customer
+     │
+     ▼
+Restaurant Website
+     │
+     ▼
+REST API (Flask)
+     │
+     ├────────► /menu
+     ├────────► /chat
+     ├────────► /order
+     ├────────► /status
+     └────────► /feedback
+                 │
+                 ▼
+             Gemini AI
+                 │
+                 ▼
+            HTTP Response
+                 │
+                 ▼
+             Restaurant Website
+Module 1 Progress
+Module 1 : Project Planning
+
+✅ Chapter 1 : Project Introduction
+✅ Chapter 2 : Restaurant Website Architecture
+✅ Chapter 3 : Client-Server Communication
+✅ Chapter 4 : REST API Fundamentals
+
+⬜ Chapter 5 : HTTP Request & Response
+⬜ Chapter 6 : Flask Project Structure
+⬜ Chapter 7 : Gemini API Overview
+⬜ Chapter 8 : Voiceflow Overview
+⬜ Chapter 9 : Replit Overview
+⬜ Chapter 10 : Complete System Architecture
+Next Chapter
+
+Chapter 5 – HTTP Request & Response
+
+In the next chapter, we'll learn how browsers, Flask, Voiceflow, and the Gemini API exchange data using HTTP methods, headers, JSON, and status codes. 
+This will help you understand exactly what happens when a customer sends a chat message or places an order on your website.
+
+==================
+
+
+
