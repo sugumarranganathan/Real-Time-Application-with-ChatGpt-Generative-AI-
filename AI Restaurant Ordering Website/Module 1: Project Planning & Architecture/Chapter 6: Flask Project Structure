@@ -1,0 +1,606 @@
+Module 1: Project Planning
+Chapter 6: Flask Project Structure
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is a Flask Project Structure?
+
+A Flask Project Structure is the organized arrangement of folders and files used to build a Flask application.
+
+Instead of putting everything into one Python file, we separate the project into different folders.
+
+This makes the application:
+
+Easy to understand
+Easy to maintain
+Easy to upgrade
+Professional
+2. Why Do We Need a Project Structure?
+
+Imagine building a restaurant.
+
+Would you keep everything in one room?
+
+Kitchen
+Dining
+Billing
+Storage
+Office
+
+No.
+
+Each department has its own place.
+
+Similarly,
+
+A Flask project also has separate folders.
+
+3. Real-Time Example
+
+Think about a restaurant.
+
+Restaurant
+│
+├── Kitchen
+├── Dining Hall
+├── Cash Counter
+├── Store Room
+└── Manager Cabin
+
+Similarly,
+
+Our AI Restaurant Website has
+
+Project
+│
+├── Python
+├── HTML
+├── CSS
+├── JavaScript
+├── Images
+└── AI Services
+
+Everything has its own responsibility.
+
+4. Complete Flask Project Structure
+AI_Restaurant_Website/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .env
+│
+├── templates/
+│      ├── index.html
+│      ├── menu.html
+│      ├── about.html
+│      ├── contact.html
+│      └── order.html
+│
+├── static/
+│      ├── css/
+│      │      └── style.css
+│      │
+│      ├── js/
+│      │      └── script.js
+│      │
+│      └── images/
+│
+├── services/
+│      ├── gemini_service.py
+│      ├── order_service.py
+│      └── google_sheet.py
+│
+├── knowledge/
+│      └── restaurant_menu.pdf
+│
+└── data/
+       └── menu.csv
+5. Root Folder
+AI_Restaurant_Website/
+
+This is the main project folder.
+
+Everything belongs inside this folder.
+
+6. app.py
+
+This is the heart of the Flask application.
+
+Responsibilities:
+
+Start Flask
+Create routes
+Receive requests
+Return responses
+Connect Gemini
+Connect Voiceflow
+
+Example
+
+Customer
+
+↓
+
+Website
+
+↓
+
+app.py
+
+↓
+
+Gemini
+
+↓
+
+Website
+7. requirements.txt
+
+This file stores all Python libraries.
+
+Example
+
+Flask
+google-genai
+python-dotenv
+gspread
+gunicorn
+
+When another developer downloads your project,
+
+they simply run
+
+pip install -r requirements.txt
+
+Everything gets installed automatically.
+
+8. README.md
+
+README explains the project.
+
+It usually contains
+
+Project Description
+Features
+Installation
+Folder Structure
+Screenshots
+Author
+
+This is the first file people see on GitHub.
+
+9. .env
+
+Stores secret information.
+
+Example
+
+GEMINI_API_KEY=xxxxxxxx
+
+Never write API keys directly inside Python files.
+
+Wrong
+
+api_key="ABC123"
+
+Correct
+
+.env
+
+↓
+
+API Key
+
+↓
+
+Python Reads It
+10. templates Folder
+
+Contains HTML pages.
+
+Example
+
+templates/
+│
+├── index.html
+├── menu.html
+├── about.html
+├── contact.html
+└── order.html
+
+Responsibilities
+
+Home Page
+Menu
+About
+Contact
+Order Page
+11. static Folder
+
+Contains static resources.
+
+static/
+│
+├── css
+├── js
+└── images
+
+Static files do not execute Python.
+
+They only improve the website appearance.
+
+12. css Folder
+style.css
+
+Purpose
+
+Colors
+Buttons
+Fonts
+Layout
+Mobile Responsive Design
+13. js Folder
+script.js
+
+Purpose
+
+Open Chatbot
+Send Message
+Receive AI Response
+Button Click Events
+Dynamic Updates
+14. images Folder
+
+Stores images.
+
+Examples
+
+logo.png
+
+pizza.jpg
+
+burger.jpg
+
+banner.png
+15. services Folder
+
+Contains reusable Python files.
+
+Example
+
+services/
+│
+├── gemini_service.py
+├── order_service.py
+└── google_sheet.py
+16. gemini_service.py
+
+Responsible for
+
+Question
+
+↓
+
+Gemini API
+
+↓
+
+AI Response
+
+Instead of writing Gemini code inside app.py,
+
+we keep it here.
+
+17. order_service.py
+
+Responsible for
+
+Receive Order
+
+↓
+
+Calculate Total
+
+↓
+
+Generate Order ID
+
+↓
+
+Return Confirmation
+18. google_sheet.py
+
+Responsible for
+
+Customer Order
+
+↓
+
+Google Sheets
+
+↓
+
+Store Data
+19. knowledge Folder
+
+Stores restaurant knowledge.
+
+Example
+
+restaurant_menu.pdf
+
+offers.pdf
+
+restaurant_info.pdf
+
+Gemini can use these documents to answer questions.
+
+=============
+
+20. data Folder
+
+Stores structured data.
+
+Example
+
+menu.csv
+
+Contents
+
+| Food   | Price |
+| ------ | ----- |
+| Pizza  | ₹250  |
+| Burger | ₹180  |
+
+Later we can replace CSV with MySQL.
+
+================
+
+21. Complete Project Architecture
+Customer
+      │
+      ▼
+index.html
+      │
+      ▼
+script.js
+      │
+      ▼
+Flask (app.py)
+      │
+      ├─────────────┐
+      ▼             ▼
+Gemini Service   Order Service
+      │             │
+      ▼             ▼
+Gemini API     Google Sheets
+      │
+      ▼
+AI Response
+      │
+      ▼
+Customer
+
+=============
+
+22. Why Separate Files?
+
+Imagine writing
+
+HTML
+CSS
+JavaScript
+Gemini
+Google Sheets
+
+inside one Python file.
+
+app.py
+
+5000 Lines
+
+Very difficult.
+
+Professional developers divide responsibilities.
+
+23. Industry Standard Structure
+
+Most Flask projects follow this idea.
+
+Frontend
+
+↓
+
+Templates
+
+↓
+
+Static
+
+↓
+
+Backend
+
+↓
+
+Services
+
+↓
+
+Database
+
+↓
+
+Deployment
+
+This makes teamwork easier because different developers can work on different parts without interfering with each other.
+
+
+==========
+
+24. Learning Outcome
+
+After completing this chapter, you understand:
+
+Flask Project Structure
+Root Folder
+app.py
+templates
+static
+css
+js
+images
+services
+Gemini Service
+Google Sheets Service
+Knowledge Folder
+Data Folder
+requirements.txt
+README.md
+.env
+
+============
+
+
+Assignment (With Answers)
+Question 1
+What is the main Python file?
+
+Answer:
+
+app.py
+
+Question 2
+Which folder stores HTML pages?
+
+Answer:
+
+templates
+
+Question 3
+Which folder stores CSS and JavaScript?
+
+Answer:
+
+static
+
+Question 4
+Where should the Gemini API code be written?
+
+Answer:
+
+Inside services/gemini_service.py
+
+Question 5
+Where should the API key be stored?
+
+Answer:
+
+Inside the .env file.
+
+Question 6
+Which file lists Python libraries?
+
+Answer:
+
+requirements.txt
+
+Question 7
+Which file explains the project?
+
+Answer:
+
+README.md
+
+Question 8
+Draw the project structure.
+
+Answer:
+
+AI_Restaurant_Website/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .env
+│
+├── templates/
+├── static/
+├── services/
+├── knowledge/
+└── data/
+
+===========
+
+
+Real-Time Analogy
+
+Imagine a real restaurant:
+---------------------------
+
+
+| Restaurant Department | Flask Project       |
+| --------------------- | ------------------- |
+| Reception             | `templates/`        |
+| Interior Decoration   | `static/css/`       |
+| Waiter                | `script.js`         |
+| Kitchen               | `app.py`            |
+| Chef                  | `gemini_service.py` |
+| Billing Counter       | `order_service.py`  |
+| Accounts Register     | `google_sheet.py`   |
+| Menu Book             | `knowledge/`        |
+| Price List            | `data/menu.csv`     |
+
+
+=====
+
+Each department has a separate responsibility, making the restaurant efficient. A Flask project works the same way.
+
+==========
+
+
+Chapter Summary
+AI_Restaurant_Website/
+│
+├── app.py                ← Flask Backend
+├── requirements.txt      ← Python Libraries
+├── README.md             ← Project Guide
+├── .env                  ← API Keys
+│
+├── templates/            ← HTML Pages
+├── static/               ← CSS, JS, Images
+├── services/             ← Business Logic
+├── knowledge/            ← Restaurant Information
+└── data/                 ← Menu Data
+Module 1 Progress
+Module 1 : Project Planning
+
+✅ Chapter 1 : Project Introduction
+✅ Chapter 2 : Restaurant Website Architecture
+✅ Chapter 3 : Client-Server Communication
+✅ Chapter 4 : REST API Fundamentals
+✅ Chapter 5 : HTTP Request & Response
+✅ Chapter 6 : Flask Project Structure
+
+⬜ Chapter 7 : Gemini API Overview
+⬜ Chapter 8 : Voiceflow Overview
+⬜ Chapter 9 : Replit Overview
+⬜ Chapter 10 : Complete System Architecture
+Next Chapter
+
+Chapter 7 – Gemini API Overview
+
+In the next chapter, you'll learn what the Gemini API is, how Large Language Models (LLMs) work, 
+why Gemini is used instead of traditional programming for conversational AI, how it integrates with Flask, 
+and how it powers our AI Restaurant Ordering Website. This chapter prepares you for the practical Gemini integration in later modules.
+
+=========
+
+
+
+
+
+
+
