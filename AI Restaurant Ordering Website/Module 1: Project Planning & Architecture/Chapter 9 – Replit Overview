@@ -1,0 +1,357 @@
+Module 1: Project Planning
+Chapter 9: Replit Overview
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is Replit?
+
+Replit is a cloud-based online IDE (Integrated Development Environment) where you can write, run, test, and deploy applications directly from your browser.
+
+Unlike traditional development, you don't need to install Python, Flask, or VS Code on your local computer.
+
+Everything runs in the cloud.
+
+2. Why Do We Use Replit?
+
+Without Replit
+
+Laptop
+
+↓
+
+Install Python
+
+↓
+
+Install Flask
+
+↓
+
+Configure Environment
+
+↓
+
+Run Server
+
+With Replit
+
+Browser
+
+↓
+
+Open Replit
+
+↓
+
+Create Project
+
+↓
+
+Run
+
+↓
+
+Website Live
+3. Real-Time Example
+
+Imagine you built a restaurant chatbot.
+
+If you run Flask on your laptop:
+
+Laptop ON
+
+↓
+
+Website Works
+
+Laptop OFF
+
+↓
+
+Website Stops
+
+If you host it on Replit:
+
+Replit Cloud
+
+↓
+
+Website Runs
+
+24 Hours
+
+↓
+
+Visitors Can Access Anytime
+4. Why Replit for Our Project?
+
+We are building:
+
+Flask Backend
+Gemini AI Integration
+Voiceflow API
+Restaurant Website
+
+Replit can host all these components in one place.
+
+5. Replit Architecture
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Voiceflow
+      │
+      ▼
+Replit Flask Server
+      │
+      ▼
+Gemini API
+      │
+      ▼
+AI Response
+      │
+      ▼
+Customer
+
+=====
+
+6. Replit Features
+   ----------------
+
+| Feature         | Purpose                 |
+| --------------- | ----------------------- |
+| Online IDE      | Write Python code       |
+| Cloud Hosting   | Run applications online |
+| Package Manager | Install libraries       |
+| Secrets         | Store API Keys          |
+| Version History | Track changes           |
+| Deployment      | Publish website         |
+
+
+===
+
+7. Replit Workspace
+
+A typical project looks like:
+
+AI_Restaurant_Website
+│
+├── app.py
+├── requirements.txt
+├── templates/
+├── static/
+├── services/
+└── .env (or Secrets)
+
+You can edit files directly in your browser.
+
+8. Running Flask on Replit
+
+Flow:
+
+Write Code
+
+↓
+
+Click Run
+
+↓
+
+Flask Starts
+
+↓
+
+Public URL Generated
+
+↓
+
+Website Accessible
+9. Replit Secrets
+
+Never store API keys inside source code.
+
+Instead, Replit provides Secrets.
+
+Example
+
+Key
+
+GEMINI_API_KEY
+
+Value
+
+AIzaSyxxxxxxxxxxxx
+
+Python reads it securely.
+
+10. Why Use Secrets?
+
+Wrong
+
+api_key = "AIzaSy123456"
+
+Problems:
+
+Visible in GitHub
+Security risk
+Easy to misuse
+
+Correct
+
+Replit Secrets
+
+↓
+
+Python
+
+↓
+
+Gemini API
+11. Python Reads Secrets
+
+Python reads the secret using environment variables.
+
+Example
+
+import os
+
+api_key = os.getenv("GEMINI_API_KEY")
+
+This keeps sensitive information out of your code.
+
+12. Installing Libraries
+
+Replit automatically installs packages listed in:
+
+requirements.txt
+
+Example
+
+Flask
+google-genai
+python-dotenv
+gunicorn
+gspread
+13. Deploying the Website
+
+Development flow:
+
+Write Code
+
+↓
+
+Run
+
+↓
+
+Test
+
+↓
+
+Fix Errors
+
+↓
+
+Deploy
+
+↓
+
+Live Website
+14. Connecting Voiceflow
+
+Voiceflow calls your Flask API hosted on Replit.
+
+Voiceflow
+
+↓
+
+POST /chat
+
+↓
+
+Replit Flask
+
+↓
+
+Gemini
+
+↓
+
+Response
+
+Replit provides the public URL that Voiceflow uses.
+
+15. Connecting Gemini
+
+Flask sends customer questions to Gemini.
+
+Customer
+
+↓
+
+Flask
+
+↓
+
+Gemini API
+
+↓
+
+AI Response
+
+Replit simply hosts the Flask application.
+
+16. Future Google Sheets Integration
+
+Later we will also connect:
+
+Flask
+
+↓
+
+Google Sheets API
+
+↓
+
+Store Orders
+
+Everything runs from Replit.
+
+17. Complete Deployment Architecture
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Voiceflow Widget
+      │
+      ▼
+Replit Flask Server
+      │
+      ├──────────────┐
+      ▼              ▼
+ Gemini API    Google Sheets
+      │              │
+      ▼              ▼
+ AI Response     Store Orders
+      │
+      ▼
+Customer
+18. Advantages of Replit
+No software installation
+Works in the browser
+Suitable for Chromebook users
+Cloud hosting
+Easy sharing
+Easy deployment
+Supports Flask and Python
+Secure API key management
+
+=========
+
+
+
