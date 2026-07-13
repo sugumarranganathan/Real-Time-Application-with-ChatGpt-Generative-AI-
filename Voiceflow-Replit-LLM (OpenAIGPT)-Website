@@ -1,0 +1,346 @@
+Technologies Used
+
+| Technology                 | Purpose                                     |
+| -------------------------- | ------------------------------------------- |
+| **Voiceflow**              | Design chatbot conversation flow visually   |
+| **Replit**                 | Host Python backend and APIs online         |
+| **Python**                 | Write backend logic                         |
+| **Flask/FastAPI**          | Create API endpoints                        |
+| **HTTP API**               | Communication between Voiceflow and backend |
+| **JSON**                   | Data format for requests and responses      |
+| **LLM (GPT/Gemini, etc.)** | Generate intelligent responses              |
+
+
+=====
+
+What is this project?
+
+The course is building an AI chatbot that can be embedded into a website.
+
+Instead of writing all the backend code manually in Flask, the instructor is using:
+
+Voiceflow → Chatbot Builder
+Replit → Backend API Hosting
+LLM (OpenAI/GPT) → AI Brain
+Website → User Interface
+
+Overall Architecture
+                  User
+                    │
+                    ▼
+          Website Chat Window
+                    │
+                    ▼
+              Voiceflow Bot
+                    │
+             HTTP API Request
+                    │
+                    ▼
+             Replit Backend API
+                    │
+                    ▼
+          OpenAI / LLM API
+                    │
+                    ▼
+            AI Generated Reply
+                    │
+                    ▼
+             Replit API
+                    │
+                    ▼
+              Voiceflow
+                    │
+                    ▼
+          Reply shown to User
+
+====
+
+====
+
+Screenshot 1 – Replit
+
+The first image shows the Replit website.
+
+Replit is an online coding platform.
+
+What is Replit used for?
+
+Instead of installing Python on your laptop, you can write and run code online.
+
+Example:
+
+app.py
+requirements.txt
+main.py
+
+You click Run, and Replit hosts your application.
+
+It provides a public URL such as:
+
+https://myproject.replit.app
+
+That URL can be called from other applications like Voiceflow.
+
+Screenshot 2 – Voiceflow
+
+The second image shows Voiceflow.
+
+Voiceflow is a no-code chatbot builder.
+
+Instead of writing conversation logic in Python, you visually connect blocks.
+
+Example:
+
+Start
+   │
+   ▼
+User says:
+"Hi"
+   │
+   ▼
+AI Block
+   │
+   ▼
+Response
+
+====
+
+Left Side – Topics
+Home
+
+This is where conversation flows are organized.
+
+Example:
+
+Home
+
+Support
+
+Sales
+
+FAQ
+
+Booking
+
+Each topic can have its own chatbot flow.
+
+===
+
+Middle Canvas
+
+This is the chatbot workflow.
+
+Example:
+
+Start
+   │
+   ▼
+Welcome Message
+   │
+   ▼
+Capture User Question
+   │
+   ▼
+Send API Request
+   │
+   ▼
+Receive AI Answer
+   │
+   ▼
+Display Reply
+
+Each colored box is one step in the conversation.
+
+===
+
+Right Side – API Block
+
+The right panel is the most important part.
+
+It sends an HTTP request.
+
+It shows:
+
+GET
+https://...repl.co/start
+
+This means Voiceflow is calling your backend.
+
+Workflow:
+
+Voiceflow
+
+↓
+
+HTTP Request
+
+↓
+
+Replit Server
+
+↓
+
+Python Code
+
+↓
+
+AI
+
+↓
+
+Voiceflow
+API URL
+
+Example:
+
+https://myproject.replit.app/start
+
+When Voiceflow sends a request:
+
+GET /start
+
+Your Python server responds.
+
+Example Flask code:
+
+@app.route("/start")
+def start():
+    return {
+        "message": "Hello! How can I help you?"
+    }
+
+Voiceflow receives that response.
+
+Headers
+
+Headers carry additional information.
+
+Example:
+
+Authorization
+
+Content-Type
+
+API-Key
+
+If your API requires authentication, the key is passed here.
+
+Parameters
+
+Parameters are the data sent with the request.
+
+Example:
+
+Name = Rahul
+
+Age = 30
+
+Question = "What is AI?"
+
+Voiceflow sends those values to your API.
+
+====
+
+Capture Response
+
+The screenshot shows:
+
+response.thread_id
+
+This means Voiceflow stores part of the API response into a variable.
+
+Example API response:
+
+{
+  "thread_id": "abc123",
+  "message": "Welcome!"
+}
+
+Voiceflow saves:
+
+thread_id = abc123
+
+and can reuse it later.
+
+Send Request Button
+
+When you click Send Request:
+
+Voiceflow
+
+↓
+
+Calls API
+
+↓
+
+Waits for response
+
+↓
+
+Shows returned data
+
+This lets you test your backend without publishing the chatbot.
+
+End-to-End Flow
+User
+│
+│ Types:
+│ "Tell me about Python"
+▼
+Voiceflow
+│
+│ HTTP Request
+▼
+Replit API
+│
+│ Calls OpenAI
+▼
+GPT / LLM
+│
+│ Generates Answer
+▼
+Replit
+│
+│ Returns JSON
+▼
+Voiceflow
+│
+│ Displays Reply
+▼
+User
+
+====
+
+How This Relates to Your Flask Learning
+
+You've already completed a Flask project where:
+
+HTML Form
+        │
+        ▼
+Flask Backend
+        │
+        ▼
+Machine Learning Model
+        │
+        ▼
+Salary Prediction
+
+This Voiceflow project uses the same backend idea, but instead of an HTML form, the frontend is a chatbot.
+
+Voiceflow Chatbot
+        │
+        ▼
+Flask / Replit API
+        │
+        ▼
+OpenAI / Gemini
+        │
+        ▼
+AI Response
+
+So your Flask knowledge directly applies—you'll just expose API endpoints (such as /start or /chat) that Voiceflow can call instead of rendering HTML pages.
+
+====
+
