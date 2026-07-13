@@ -1,0 +1,430 @@
+Module 1: Project Planning
+Chapter 3: Client-Server Communication
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is Client-Server Communication?
+
+Client-Server Communication is the process where a user's device (Client) sends a request to a server, and the server processes the request and sends back a response.
+
+In our project:
+
+The Customer's Browser is the Client.
+The Flask Application is the Server.
+Gemini AI helps generate intelligent responses.
+2. Why Do We Need Client-Server Communication?
+
+Imagine there is no server.
+
+A customer visits the restaurant website and asks:
+
+"Show today's special."
+
+Without a server:
+
+The browser cannot understand the request.
+It cannot access Gemini AI.
+It cannot retrieve menu information.
+
+With Flask acting as the server, the request is processed and a proper response is returned.
+
+===
+
+3. What is a Client?
+
+A Client is any application that sends a request.
+
+Examples:
+
+Web Browser (Chrome, Edge, Firefox)
+Mobile Application
+Voiceflow Chat Widget
+
+In this project:
+
+Customer
+
+↓
+
+Google Chrome
+
+↓
+
+Restaurant Website
+
+The browser is the Client.
+
+4. What is a Server?
+
+A Server is a program that receives requests, processes them, and returns responses.
+
+Our Flask application acts as the Server.
+
+Responsibilities:
+
+Receive customer messages
+Call Gemini API
+Process responses
+Return answers to the website
+Store customer orders (later)
+5. Real-Time Example
+
+Customer opens the website.
+
+Customer asks:
+
+Show me today's special.
+
+Communication:
+
+Customer
+      │
+      ▼
+Browser (Client)
+      │
+      ▼
+Flask Server
+      │
+      ▼
+Gemini AI
+      │
+      ▼
+Flask Server
+      │
+      ▼
+Browser
+      │
+      ▼
+Customer Sees Response
+
+=====
+
+6. Client-Server Workflow
+Customer Types Message
+        │
+        ▼
+Browser Sends Request
+        │
+        ▼
+Flask Receives Request
+        │
+        ▼
+Gemini Generates Response
+        │
+        ▼
+Flask Sends Response
+        │
+        ▼
+Browser Displays Answer
+7. Restaurant Ordering Example
+
+Customer:
+
+I want Chicken Biryani.
+
+Request Flow:
+
+Customer
+      │
+      ▼
+Website
+      │
+      ▼
+Flask
+      │
+      ▼
+Gemini
+      │
+      ▼
+Recommendation
+      │
+      ▼
+Customer
+8. What Happens Inside Flask?
+
+Flask performs four major tasks.
+
+Receive Request
+        │
+        ▼
+Process Request
+        │
+        ▼
+Call Gemini API
+        │
+        ▼
+Return Response
+
+Example:
+
+Customer:
+
+Recommend a pizza.
+
+Flask sends this question to Gemini.
+
+Gemini replies:
+
+I recommend Margherita Pizza.
+
+Flask returns this answer to the website.
+
+9. Communication Without AI
+
+Suppose the website only shows restaurant timings.
+
+Customer
+      │
+      ▼
+Website
+      │
+      ▼
+Flask
+      │
+      ▼
+Restaurant Timing
+      │
+      ▼
+Customer
+
+The answer comes directly from Flask.
+
+10. Communication With AI
+
+When AI is involved:
+
+Customer
+      │
+      ▼
+Website
+      │
+      ▼
+Flask
+      │
+      ▼
+Gemini AI
+      │
+      ▼
+AI Response
+      │
+      ▼
+Customer
+
+Gemini understands natural language and generates intelligent answers.
+
+==========
+
+11. Request Example
+
+Customer asks:
+
+Suggest food under ₹300.
+
+Browser sends:
+
+Request
+
+Question:
+Suggest food under ₹300
+
+Flask receives it.
+
+Gemini processes it.
+
+Response:
+
+Chicken Burger
+
+Fresh Lime Juice
+
+Total ₹260
+
+Browser displays the result.
+
+12. Future Order Flow
+
+Later in the project:
+
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Flask
+      │
+      ▼
+Gemini
+      │
+      ▼
+Collect Name
+      │
+      ▼
+Collect Phone
+      │
+      ▼
+Store Order
+      │
+      ▼
+Google Sheets
+13. Complete Communication Diagram
+                    Customer
+                        │
+                        ▼
+              Restaurant Website
+                        │
+                        ▼
+                Voiceflow Chatbot
+                        │
+                        ▼
+                  Flask Server
+                        │
+                        ▼
+                   Gemini API
+                        │
+                        ▼
+                 AI Response
+                        │
+                        ▼
+                  Flask Server
+                        │
+                        ▼
+               Voiceflow Chatbot
+                        │
+                        ▼
+                     Customer
+14. Advantages of Client-Server Architecture
+Centralized processing
+Easy maintenance
+Secure communication
+AI integration
+Easy deployment
+Scalable for multiple users
+15. Learning Outcome
+
+After completing this chapter, you can understand:
+
+What a Client is
+What a Server is
+How requests are sent
+How Flask processes requests
+How Gemini generates responses
+How the website receives AI answers
+Assignment (With Answers)
+Question 1
+What is a Client?
+
+Answer:
+
+A Client is an application (such as a web browser or mobile app) that sends requests to a server.
+
+Question 2
+What is the Server in this project?
+
+Answer:
+
+The Flask application acts as the Server.
+
+Question 3
+Which component generates intelligent answers?
+
+Answer:
+
+Gemini AI.
+
+Question 4
+Draw the request flow.
+
+Answer:
+
+Customer
+    │
+    ▼
+Browser
+    │
+    ▼
+Flask
+    │
+    ▼
+Gemini
+    │
+    ▼
+Flask
+    │
+    ▼
+Browser
+    │
+    ▼
+Customer
+Question 5
+Why do we need Flask?
+
+Answer:
+
+Flask receives requests from the website, communicates with Gemini AI, processes responses, and sends them back to the customer.
+
+Question 6
+What is the role of Gemini AI?
+
+Answer:
+
+Gemini AI understands customer questions and generates intelligent, natural-language responses.
+
+Question 7
+What happens after Gemini generates a response?
+
+Answer:
+
+The response is sent back to Flask, which then returns it to the browser for display.
+
+Chapter Summary
+Customer
+    │
+    ▼
+Browser (Client)
+    │
+    ▼
+Flask Server
+    │
+    ▼
+Gemini AI
+    │
+    ▼
+Flask Server
+    │
+    ▼
+Browser
+    │
+    ▼
+Customer
+Module 1 Progress
+Module 1 : Project Planning
+
+✅ Chapter 1 : Project Introduction
+✅ Chapter 2 : Restaurant Website Architecture
+✅ Chapter 3 : Client-Server Communication
+
+⬜ Chapter 4 : REST API Fundamentals
+⬜ Chapter 5 : HTTP Request & Response
+⬜ Chapter 6 : Flask Project Structure
+⬜ Chapter 7 : Gemini API Overview
+⬜ Chapter 8 : Voiceflow Overview
+⬜ Chapter 9 : Replit Overview
+⬜ Chapter 10 : Complete System Architecture
+Next Chapter
+
+Chapter 4 – REST API Fundamentals
+
+In the next chapter, you'll learn what an API is, why Flask APIs such as /chat and /order are needed, the difference between GET and POST requests, 
+and how the restaurant website communicates with the Flask backend using REST APIs. This is the foundation for connecting your website, Voiceflow, 
+and Gemini AI together.
+
+=========
+
+
+
+
+
+
+
