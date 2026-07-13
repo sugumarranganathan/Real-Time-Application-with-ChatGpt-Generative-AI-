@@ -1,0 +1,49 @@
+Voiceflow Responsibilities
+
+Voiceflow is responsible for:
+
+Starting conversations
+Collecting user messages
+Calling Flask APIs
+Showing AI responses
+Managing conversation flow
+Displaying chatbot UI
+
+Voiceflow does not replace Flask or Gemini.
+
+==========
+
+
+What Does Flask Do?
+
+Flask handles:
+
+Business logic
+API endpoints
+Gemini communication
+Order processing
+Google Sheets integration
+
+=========
+
+Voiceflow vs Flask
+-------------------
+| Voiceflow           | Flask              |
+| ------------------- | ------------------ |
+| Conversation Design | Backend Logic      |
+| Chat Interface      | Python Programming |
+| API Calls           | API Creation       |
+| Variables           | Business Logic     |
+| User Flow           | AI Integration     |
+
+
+=======
+
+
+
+
+
+
+
+
+
