@@ -1,0 +1,111 @@
+Module 1: Project Planning
+Chapter 8: Voiceflow Overview
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is Voiceflow?
+
+Voiceflow is a No-Code / Low-Code Conversational AI Platform used to design chatbots and voice assistants visually.
+
+Instead of writing hundreds of lines of chatbot code, you can build conversations using drag-and-drop blocks.
+
+Think of Voiceflow as a conversation designer, while Flask and Gemini handle the backend intelligence.
+
+========
+
+2. Why Do We Need Voiceflow?
+
+Imagine building a chatbot only with Python.
+
+User
+   │
+   ▼
+Python Code
+
+if...
+elif...
+elif...
+elif...
+elif...
+5000 lines...
+
+It quickly becomes difficult to manage.
+
+With Voiceflow:
+
+Start
+   │
+   ▼
+Welcome
+   │
+   ▼
+Capture User Message
+   │
+   ▼
+Call Flask API
+   │
+   ▼
+Display AI Response
+
+The flow is visual and much easier to maintain.
+
+==========
+
+3. Real-Time Restaurant Example
+
+Customer visits the restaurant website.
+
+Customer:
+
+Hi
+
+Voiceflow:
+
+Welcome to Food Paradise.
+How can I help you today?
+
+Customer:
+
+Recommend dinner.
+
+Voiceflow sends the question to Flask.
+
+Flask sends it to Gemini.
+
+Gemini replies.
+
+Voiceflow displays the answer.
+
+===========
+
+4. Voiceflow Architecture
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Voiceflow
+      │
+      ▼
+Flask API
+      │
+      ▼
+Gemini API
+      │
+      ▼
+AI Response
+      │
+      ▼
+Voiceflow
+      │
+      ▼
+Customer
+
+===========
+
+
+
+
+
