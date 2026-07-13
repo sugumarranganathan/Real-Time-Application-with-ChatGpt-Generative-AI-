@@ -1,0 +1,706 @@
+Module 1: Project Planning
+Chapter 10: Complete System Architecture
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is System Architecture?
+
+System Architecture is the overall blueprint of an application.
+
+It shows:
+
+All technologies used
+How they communicate
+Data flow
+User interaction
+Backend processing
+AI integration
+
+Think of it as the master plan of the entire project.
+
+2. Why Do We Need System Architecture?
+
+Imagine building a restaurant without a plan.
+
+Problems:
+
+Kitchen in the wrong place
+Billing counter missing
+Dining area too small
+Customers confused
+
+Similarly,
+
+Building software without architecture causes:
+
+Confusing code
+Difficult debugging
+Poor scalability
+Hard maintenance
+3. Real-Time Example
+
+Customer wants to order food.
+
+The complete flow is
+
+Customer
+
+↓
+
+Restaurant Website
+
+↓
+
+AI Chatbot
+
+↓
+
+Flask Backend
+
+↓
+
+Gemini AI
+
+↓
+
+Generate Response
+
+↓
+
+Website
+
+↓
+
+Customer
+
+Everything is connected through one architecture.
+
+4. Complete Restaurant AI Architecture
+                        Customer
+                            │
+                            ▼
+                  Restaurant Website
+         (HTML + CSS + JavaScript)
+                            │
+                            ▼
+                  Voiceflow Chatbot
+                            │
+                    HTTP API Request
+                            │
+                            ▼
+                 Flask Backend (Python)
+                            │
+        ┌───────────────────┼────────────────────┐
+        ▼                   ▼                    ▼
+ Gemini Service      Order Service      Google Sheets Service
+        │                   │                    │
+        ▼                   ▼                    ▼
+   Gemini API         Process Order      Store Customer Orders
+        │
+        ▼
+ Generate AI Response
+        │
+        ▼
+ Flask Returns Response
+        │
+        ▼
+ Voiceflow Displays Response
+        │
+        ▼
+        Customer
+5. Technology Flow
+
+Every technology has a specific responsibility.
+
+
+| Technology    | Responsibility       |
+| ------------- | -------------------- |
+| HTML          | Website Pages        |
+| CSS           | Styling              |
+| JavaScript    | User Interaction     |
+| Voiceflow     | Chatbot Conversation |
+| Flask         | Backend Logic        |
+| Gemini        | AI Intelligence      |
+| Google Sheets | Store Orders         |
+| Replit        | Cloud Hosting        |
+| GitHub        | Version Control      |
+
+
+============
+6. Frontend Architecture
+
+The customer only interacts with the frontend.
+
+Customer
+
+↓
+
+Home Page
+
+↓
+
+Menu Page
+
+↓
+
+About
+
+↓
+
+Contact
+
+↓
+
+Chatbot
+
+Everything the customer sees belongs to the frontend.
+
+7. Backend Architecture
+
+Behind the website,
+
+Flask performs all processing.
+
+Customer Message
+
+↓
+
+Flask
+
+↓
+
+Gemini
+
+↓
+
+Order Logic
+
+↓
+
+Google Sheets
+
+↓
+
+Response
+8. AI Processing Flow
+
+Suppose customer asks
+
+Recommend dinner under ₹400.
+
+Flow
+
+Customer
+
+↓
+
+Voiceflow
+
+↓
+
+Flask
+
+↓
+
+Gemini
+
+↓
+
+Recommendation
+
+↓
+
+Customer
+9. Food Ordering Flow
+
+Suppose customer wants
+
+Chicken Burger.
+
+Customer
+
+↓
+
+Chatbot
+
+↓
+
+Collect Name
+
+↓
+
+Collect Phone
+
+↓
+
+Collect Address
+
+↓
+
+Flask
+
+↓
+
+Google Sheets
+
+↓
+
+Restaurant Staff
+10. Website Navigation
+Food Paradise
+│
+├── Home
+│
+├── Menu
+│
+├── Today's Special
+│
+├── About
+│
+├── Contact
+│
+└── AI Chatbot
+11. Flask Architecture
+
+Flask becomes the center of the application.
+
+Website
+
+↓
+
+Flask
+
+↓
+
+Gemini
+
+↓
+
+Google Sheets
+
+↓
+
+Response
+
+Flask connects every component.
+
+12. Gemini Architecture
+
+Gemini acts as the AI brain.
+
+Customer Question
+
+↓
+
+Gemini
+
+↓
+
+AI Understanding
+
+↓
+
+AI Response
+
+Gemini understands natural language.
+
+13. Voiceflow Architecture
+
+Voiceflow controls conversations.
+
+Start
+
+↓
+
+Welcome
+
+↓
+
+Capture
+
+↓
+
+API
+
+↓
+
+Response
+
+↓
+
+Continue Chat
+14. Replit Architecture
+
+Replit hosts Flask online.
+
+Laptop
+
+↓
+
+Replit
+
+↓
+
+Internet
+
+↓
+
+Customer Access
+
+The application becomes available over the internet.
+
+=========
+
+15. Google Sheets Architecture
+
+Customer details
+
+↓
+
+Flask
+
+↓
+
+Google Sheets API
+
+↓
+
+Google Spreadsheet
+
+Restaurant staff can view the orders immediately.
+
+16. Complete Communication Flow
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Voiceflow Chatbot
+      │
+      ▼
+POST /chat
+      │
+      ▼
+Flask Backend
+      │
+      ▼
+Gemini API
+      │
+      ▼
+Generate AI Response
+      │
+      ▼
+Flask Backend
+      │
+      ▼
+Voiceflow
+      │
+      ▼
+Customer
+17. Order Processing Flow
+Customer
+
+↓
+
+Select Food
+
+↓
+
+Chatbot
+
+↓
+
+Collect Details
+
+↓
+
+POST /order
+
+↓
+
+Flask
+
+↓
+
+Google Sheets
+
+↓
+
+Restaurant Receives Order
+
+↓
+
+Prepare Food
+
+↓
+
+Deliver Food
+18. Complete Folder Architecture
+AI_Restaurant_Website/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── .env
+│
+├── templates/
+│
+├── static/
+│
+├── services/
+│
+├── knowledge/
+│
+└── data/
+
+Every folder has a specific responsibility.
+
+19. Complete Learning Flow
+Module 1
+
+↓
+
+Planning
+
+↓
+
+Architecture
+
+↓
+
+Flask
+
+↓
+
+Gemini
+
+↓
+
+Voiceflow
+
+↓
+
+Replit
+
+↓
+
+System Design
+
+↓
+
+Practical Development
+20. Future Enhancements
+
+After completing Version 1,
+
+we can add:
+
+Online Payments
+Admin Dashboard
+Order Tracking
+Customer Login
+Email Notifications
+WhatsApp Notifications
+MySQL Database
+Sales Dashboard
+Inventory Management
+Delivery Tracking
+21. End-to-End System Architecture
+                            Customer
+                                │
+                                ▼
+               Restaurant Website (Frontend)
+              (HTML + CSS + JavaScript)
+                                │
+                                ▼
+                    Voiceflow Chat Widget
+                                │
+                        HTTP Request
+                                │
+                                ▼
+                    Flask Backend (Python)
+                                │
+          ┌─────────────────────┼─────────────────────┐
+          ▼                     ▼                     ▼
+ Gemini Service          Order Service      Google Sheets Service
+          │                     │                     │
+          ▼                     ▼                     ▼
+    Gemini API           Process Order        Store Customer Data
+          │
+          ▼
+  AI Response Generated
+          │
+          ▼
+      Flask Response
+          │
+          ▼
+     Voiceflow Widget
+          │
+          ▼
+        Customer
+22. Learning Outcome
+
+After completing Module 1, you understand:
+
+Website Architecture
+Client-Server Communication
+REST APIs
+HTTP Request & Response
+Flask Project Structure
+Gemini API
+Voiceflow
+Replit
+Complete System Architecture
+
+You are now ready to begin the practical implementation.
+
+Assignment (With Answers)
+Question 1
+What is System Architecture?
+
+Answer:
+
+System Architecture is the overall design of an application that shows how all components work together.
+
+Question 2
+Which technology acts as the AI brain?
+
+Answer:
+
+Gemini AI.
+
+Question 3
+Which framework acts as the backend?
+
+Answer:
+
+Flask.
+
+Question 4
+Which platform hosts the application?
+
+Answer:
+
+Replit.
+
+Question 5
+Which platform designs the chatbot conversation?
+
+Answer:
+
+Voiceflow.
+
+Question 6
+Where are customer orders stored?
+
+Answer:
+
+Google Sheets (Version 1).
+
+Question 7
+Draw the complete architecture.
+
+Answer:
+
+Customer
+    │
+    ▼
+Website
+    │
+    ▼
+Voiceflow
+    │
+    ▼
+Flask
+    │
+    ├────────► Gemini
+    └────────► Google Sheets
+    │
+    ▼
+Customer
+
+============
+
+Real-Time Industry Examples
+
+| Industry   | Same Architecture             |
+| ---------- | ----------------------------- |
+| Restaurant | Food ordering assistant       |
+| Hospital   | Appointment booking assistant |
+| Travel     | Tour recommendation chatbot   |
+| College    | Admission enquiry chatbot     |
+| Bank       | Customer support chatbot      |
+| E-commerce | Shopping assistant            |
+| Apartment  | Maintenance assistant         |
+
+
+====
+
+The architecture remains almost the same; only the business logic and knowledge change.
+
+Module 1 Summary
+AI Restaurant Ordering Website
+│
+├── Website (HTML, CSS, JavaScript)
+│
+├── Voiceflow (Conversation Flow)
+│
+├── Flask (Backend)
+│
+├── Gemini (AI)
+│
+├── Google Sheets (Orders)
+│
+├── Replit (Hosting)
+│
+└── GitHub (Version Control)
+🎉 Module 1 Completed
+Module 1 : Project Planning
+
+✅ Chapter 1 : Project Introduction
+✅ Chapter 2 : Restaurant Website Architecture
+✅ Chapter 3 : Client-Server Communication
+✅ Chapter 4 : REST API Fundamentals
+✅ Chapter 5 : HTTP Request & Response
+✅ Chapter 6 : Flask Project Structure
+✅ Chapter 7 : Gemini API Overview
+✅ Chapter 8 : Voiceflow Overview
+✅ Chapter 9 : Replit Overview
+✅ Chapter 10 : Complete System Architecture
+
+🎉 Module 1 Completed Successfully
+
+=============
+
+🚀 Next Module
+Module 2 – Restaurant Website Development (Practical)
+
+Now we'll move from theory to hands-on development.
+
+We will build the project step by step:
+
+Start
+│
+├── Step 1 : Create Replit Project
+├── Step 2 : Create Flask Project
+├── Step 3 : Create Home Page
+├── Step 4 : Design Navigation Bar
+├── Step 5 : Create Restaurant Menu Page
+├── Step 6 : Create About Page
+├── Step 7 : Create Contact Page
+├── Step 8 : Add Professional CSS
+├── Step 9 : Add JavaScript
+├── Step 10 : Test Complete Website
+└── Next Module (Gemini Integration)
+
+This practical module will create the restaurant website first. After that, we'll integrate Gemini AI, Voiceflow, and Google Sheets in the following modules.
+
+===========
+
+
+
+
+
+
