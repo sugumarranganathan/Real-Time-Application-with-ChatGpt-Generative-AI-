@@ -1,0 +1,442 @@
+Module 1: Project Planning
+Chapter 2: Restaurant Website Architecture
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is Website Architecture?
+
+Website Architecture is the overall structure and organization of a website.
+
+It defines:
+
+How pages are connected
+How users navigate
+Where information is stored
+How the AI chatbot communicates with the backend
+
+A well-designed architecture makes the website easy to use, easy to maintain, and scalable.
+
+2. Why Do We Need Website Architecture?
+
+Imagine a restaurant website with no structure.
+
+Problems:
+
+Customers cannot find the menu.
+Contact details are difficult to locate.
+Ordering process becomes confusing.
+AI chatbot has no proper integration.
+
+A planned architecture ensures a smooth user experience.
+
+3. Real-Time Example
+
+Suppose a customer wants to order food.
+
+Without architecture:
+
+Customer
+
+↓
+
+Confused
+
+↓
+
+Leaves Website
+
+With architecture:
+
+Customer
+
+↓
+
+Home Page
+
+↓
+
+Menu
+
+↓
+
+AI Chatbot
+
+↓
+
+Place Order
+
+↓
+
+Order Confirmation
+
+The customer completes the order easily.
+
+4. Website Pages
+
+Our restaurant website will contain the following pages.
+
+| Page            | Purpose                        |
+| --------------- | ------------------------------ |
+| Home            | Welcome customers              |
+| Menu            | Display food items             |
+| Today's Special | Highlight special dishes       |
+| About Us        | Restaurant information         |
+| Contact         | Address and phone number       |
+| AI Chatbot      | Help customers and take orders |
+
+
+=====
+
+5. Website Navigation
+Home
+│
+├── Menu
+│
+├── Today's Special
+│
+├── About Us
+│
+├── Contact
+│
+└── AI Chatbot
+
+The navigation bar helps customers move between pages quickly.
+
+6. Customer Journey
+
+A customer typically follows this flow.
+
+Open Website
+        │
+        ▼
+Home Page
+        │
+        ▼
+Browse Menu
+        │
+        ▼
+Ask AI Chatbot
+        │
+        ▼
+Choose Food
+        │
+        ▼
+Enter Delivery Details
+        │
+        ▼
+Order Confirmation
+7. AI Chatbot Position
+
+The chatbot will appear at the bottom-right corner of every page.
+
+---------------------------------------
+
+Food Paradise
+
+Home | Menu | About | Contact
+
+---------------------------------------
+
+Content
+
+Content
+
+Content
+
+                     💬 AI Chatbot
+
+---------------------------------------
+
+This allows customers to ask questions from any page.
+
+8. Backend Communication
+
+The chatbot does not answer questions by itself.
+
+It communicates with the Flask backend.
+
+Customer
+
+↓
+
+Website
+
+↓
+
+AI Chatbot
+
+↓
+
+Flask Backend
+
+↓
+
+Gemini AI
+
+↓
+
+Response
+
+↓
+
+Website
+9. Complete Website Architecture
+                      Customer
+                          │
+                          ▼
+               Restaurant Website
+                          │
+     ┌────────────┬─────────────┬─────────────┐
+     ▼            ▼             ▼             ▼
+  Home         Menu        Contact      About Us
+                          │
+                          ▼
+                     AI Chatbot
+                          │
+                          ▼
+                     Flask Backend
+                          │
+                          ▼
+                      Gemini API
+                          │
+                          ▼
+                     AI Response
+                          │
+                          ▼
+                      Customer
+
+
+======
+
+10. Future Architecture
+
+Later in the project, we will add order management.
+
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+AI Chatbot
+      │
+      ▼
+Flask Backend
+      │
+      ├─────────────┐
+      ▼             ▼
+ Gemini API   Google Sheets
+      │             │
+      ▼             ▼
+AI Response     Customer Orders
+11. Why is Flask Used?
+
+Flask acts as the backend controller.
+
+Responsibilities:
+
+Receive customer messages
+Send questions to Gemini
+Receive AI responses
+Return responses to the website
+Store customer orders
+
+Without Flask:
+
+Website
+
+↓
+
+Cannot communicate with Gemini.
+12. Why is Gemini Used?
+
+Gemini is the AI engine.
+
+It helps customers by:
+
+Answering menu questions
+Recommending food
+Explaining offers
+Answering restaurant FAQs
+Guiding customers during ordering
+
+Example:
+
+Customer:
+
+Suggest a vegetarian dinner under ₹300.
+
+Gemini:
+
+I recommend Veg Fried Rice (₹220) and Fresh Lime Juice (₹80).
+
+13. Why is Voiceflow Used?
+
+Voiceflow designs the chatbot conversation.
+
+Instead of writing every conversation in Python,
+
+we visually create:
+
+Start
+
+↓
+
+Welcome
+
+↓
+
+Customer Message
+
+↓
+
+Flask API
+
+↓
+
+Gemini
+
+↓
+
+Response
+14. Why is Replit Used?
+
+Replit hosts the Flask application online.
+
+Instead of:
+
+Laptop
+
+↓
+
+Flask Running
+
+We use:
+
+Cloud Server (Replit)
+
+↓
+
+Flask Running 24/7
+
+The chatbot remains available even when your local computer is turned off.
+
+====
+
+15. Learning Outcome
+
+After completing this chapter, you understand:
+
+Website structure
+Navigation flow
+Customer journey
+AI chatbot placement
+Backend architecture
+Gemini integration
+Voiceflow role
+Replit hosting
+Assignment (With Answers)
+Question 1
+What is Website Architecture?
+
+Answer:
+
+Website Architecture is the overall structure and organization of a website, showing how pages, users, and backend services interact.
+
+Question 2
+Which page displays food items?
+
+Answer:
+
+The Menu page.
+
+Question 3
+Where will the AI chatbot appear?
+
+Answer:
+
+At the bottom-right corner of the website so customers can access it from any page.
+
+Question 4
+Which component communicates with Gemini?
+
+Answer:
+
+The Flask backend communicates with the Gemini API.
+
+Question 5
+Why do we use Replit?
+
+Answer:
+
+To host the Flask application online so it remains accessible without running it on our local computer.
+
+Question 6
+Draw the website architecture.
+
+Answer:
+
+Customer
+    │
+    ▼
+Restaurant Website
+    │
+    ▼
+AI Chatbot
+    │
+    ▼
+Flask Backend
+    │
+    ▼
+Gemini AI
+    │
+    ▼
+AI Response
+Chapter Summary
+Restaurant Website
+│
+├── Home
+├── Menu
+├── Today's Special
+├── About Us
+├── Contact
+└── AI Chatbot
+         │
+         ▼
+    Flask Backend
+         │
+         ▼
+     Gemini AI
+         │
+         ▼
+    AI Response
+Module 1 Progress
+Module 1 : Project Planning
+
+✅ Chapter 1 : Project Introduction
+✅ Chapter 2 : Restaurant Website Architecture
+
+⬜ Chapter 3 : Client-Server Communication
+⬜ Chapter 4 : REST API Fundamentals
+⬜ Chapter 5 : HTTP Request & Response
+⬜ Chapter 6 : Flask Project Structure
+⬜ Chapter 7 : Gemini API Overview
+⬜ Chapter 8 : Voiceflow Overview
+⬜ Chapter 9 : Replit Overview
+⬜ Chapter 10 : Complete System Architecture
+Next Chapter
+
+Chapter 3 – Client-Server Communication
+
+In the next chapter, you'll learn exactly how a customer's message travels from the browser to Flask, how Flask calls the Gemini API, 
+and how the AI response is returned to the website. This is one of the most important concepts for understanding how the entire chatbot works.
+
+=================
+
+
+
+
+
+
+
