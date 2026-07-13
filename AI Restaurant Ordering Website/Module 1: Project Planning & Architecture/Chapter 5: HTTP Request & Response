@@ -1,0 +1,585 @@
+Module 1: Project Planning
+Chapter 5: HTTP Request & Response
+Project Name
+
+AI Restaurant Ordering Website Using Flask + Gemini + Voiceflow + Replit
+
+1. What is HTTP?
+
+HTTP stands for HyperText Transfer Protocol.
+
+It is the communication protocol used by web browsers and servers to exchange information.
+
+Whenever you:
+
+Open a website
+Search in Google
+Place a food order
+Chat with an AI assistant
+
+HTTP is working behind the scenes.
+
+2. Why Do We Need HTTP?
+
+Imagine a customer opens the restaurant website.
+
+The customer asks:
+
+Show today's special.
+
+Without HTTP:
+
+Customer
+
+↓
+
+Website
+
+❌ Cannot communicate
+
+↓
+
+Flask
+
+With HTTP:
+
+Customer
+
+↓
+
+Website
+
+↓
+
+HTTP
+
+↓
+
+Flask
+
+↓
+
+Gemini
+
+↓
+
+HTTP
+
+↓
+
+Website
+
+↓
+
+Customer
+
+HTTP is the language that allows all these systems to communicate.
+
+3. What is an HTTP Request?
+
+An HTTP Request is a message sent by the client to the server asking it to perform an action.
+
+Examples:
+
+Show menu
+Recommend food
+Place order
+Contact restaurant
+
+Example:
+
+Customer clicks
+
+View Menu
+
+Browser sends
+
+GET /menu
+
+to Flask.
+
+4. What is an HTTP Response?
+
+After receiving a request, the server processes it and sends back a response.
+
+Example:
+
+Customer asks
+
+Show Menu
+
+Flask returns
+
+Veg Pizza
+
+Chicken Burger
+
+Paneer Tikka
+
+Fresh Lime Juice
+
+This is the HTTP Response.
+
+5. Real-Time Restaurant Example
+
+Customer wants to order food.
+
+Customer
+
+↓
+
+Website
+
+↓
+
+POST /order
+
+↓
+
+Flask
+
+↓
+
+Save Order
+
+↓
+
+Response
+
+↓
+
+Order Confirmed
+6. HTTP Communication Flow
+Customer
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+HTTP Request
+      │
+      ▼
+Flask Server
+      │
+      ▼
+Gemini AI
+      │
+      ▼
+HTTP Response
+      │
+      ▼
+Restaurant Website
+      │
+      ▼
+Customer
+
+=====
+
+7. Components of an HTTP Request
+
+A request contains several parts.
+
+| Component | Purpose                |
+| --------- | ---------------------- |
+| URL       | API address            |
+| Method    | GET or POST            |
+| Headers   | Additional information |
+| Body      | Data sent to server    |
+
+Example:
+
+POST /chat
+
+Question:
+Recommend pizza.
+
+=====
+
+8. Components of an HTTP Response
+
+The server sends:
+
+| Component   | Purpose              |
+| ----------- | -------------------- |
+| Status Code | Success or Error     |
+| Headers     | Response information |
+| Body        | Actual data          |
+
+
+Example:
+
+Status
+
+200 OK
+
+Body
+
+Chicken Pizza
+
+₹250
+9. Request Headers
+
+Headers provide extra information.
+
+Examples:
+
+Content-Type
+
+Authorization
+
+Accept
+
+User-Agent
+
+Our chatbot mainly uses:
+
+Content-Type
+
+application/json
+
+This tells Flask that the data is JSON.
+
+10. Request Body
+
+The Body contains the actual data sent to the server.
+
+Example:
+
+{
+   "message":"Recommend a pizza"
+}
+
+Flask reads this message and forwards it to Gemini.
+
+11. Response Body
+
+Gemini generates:
+
+{
+   "response":"I recommend Veg Pizza."
+}
+
+Flask sends this JSON back to the website.
+
+12. JSON Format
+
+JSON stands for
+
+JavaScript Object Notation
+
+It is the most common format for APIs.
+
+Example:
+
+{
+   "name":"Sugumar",
+   "food":"Chicken Burger",
+   "quantity":2
+}
+
+JSON is:
+
+Easy to read
+Easy to send
+Easy for Python and JavaScript to process
+13. HTTP Status Codes
+
+Servers return status codes.
+
+
+| Code | Meaning               |
+| ---- | --------------------- |
+| 200  | Success               |
+| 201  | Created Successfully  |
+| 400  | Bad Request           |
+| 401  | Unauthorized          |
+| 403  | Forbidden             |
+| 404  | Page Not Found        |
+| 500  | Internal Server Error |
+
+
+14. Real-Time Examples
+Example 1
+
+Customer asks:
+
+Show Menu
+
+GET /menu
+
+↓
+
+200 OK
+
+↓
+
+Menu Displayed
+
+=========
+
+Example 2
+
+Customer places an order.
+
+POST /order
+
+↓
+
+201 Created
+
+↓
+
+Order Saved
+Example 3
+
+Wrong URL
+
+GET /abc
+
+↓
+
+404 Not Found
+Example 4
+
+Server error
+
+POST /chat
+
+↓
+
+500 Internal Server Error
+15. HTTP Request & Response Lifecycle
+Customer
+      │
+      ▼
+Browser
+      │
+      ▼
+HTTP Request
+      │
+      ▼
+Flask API
+      │
+      ▼
+Gemini API
+      │
+      ▼
+Generate Response
+      │
+      ▼
+HTTP Response
+      │
+      ▼
+Browser
+      │
+      ▼
+Customer
+16. Restaurant Chat Example
+
+Customer:
+
+Suggest dinner under ₹400.
+
+HTTP Request
+
+{
+   "message":"Suggest dinner under ₹400"
+}
+
+↓
+
+Flask
+
+↓
+
+Gemini
+
+↓
+
+HTTP Response
+
+{
+   "response":"Veg Fried Rice and Fresh Lime Juice."
+}
+
+↓
+
+Customer sees the recommendation.
+
+17. Future Order Example
+
+Later in our project:
+
+Customer places an order.
+
+Request:
+
+{
+   "name":"Sugumar",
+   "phone":"9876543210",
+   "food":"Chicken Burger",
+   "quantity":2
+}
+
+Response:
+
+{
+   "status":"Order Confirmed",
+   "order_id":"ORD1001"
+}
+
+=======
+
+18. Learning Outcome
+
+After completing this chapter, you will understand:
+
+What HTTP is
+HTTP Request
+HTTP Response
+Request Headers
+Request Body
+Response Body
+JSON
+Status Codes
+Communication between Browser, Flask, and Gemini
+
+
+==========
+
+Assignment (With Answers)
+Question 1
+What is HTTP?
+
+Answer:
+
+HTTP (HyperText Transfer Protocol) is the communication protocol used between clients (browsers) and servers.
+
+Question 2
+What is an HTTP Request?
+
+Answer:
+
+An HTTP Request is a message sent by the client to the server asking it to perform an action.
+
+Question 3
+What is an HTTP Response?
+
+Answer:
+
+An HTTP Response is the server's reply after processing the client's request.
+
+Question 4
+Which format is commonly used to exchange API data?
+
+Answer:
+
+JSON (JavaScript Object Notation).
+
+Question 5
+Which HTTP status code means Success?
+
+Answer:
+
+200 OK.
+
+Question 6
+Which status code means Page Not Found?
+
+Answer:
+
+404 Not Found.
+
+Question 7
+Draw the HTTP communication flow.
+
+Answer:
+
+Customer
+    │
+    ▼
+Restaurant Website
+    │
+    ▼
+HTTP Request
+    │
+    ▼
+Flask API
+    │
+    ▼
+Gemini AI
+    │
+    ▼
+HTTP Response
+    │
+    ▼
+Restaurant Website
+    │
+    ▼
+Customer
+
+======
+
+Real-World Examples of HTTP
+---------------------------
+
+| Website                | Request        | Response              |
+| ---------------------- | -------------- | --------------------- |
+| Google Search          | Search keyword | Search results        |
+| Swiggy                 | GET /menu      | Restaurant menu       |
+| Zomato                 | POST /order    | Order confirmation    |
+| Gmail                  | POST /login    | Login success         |
+| YouTube                | GET /video     | Video stream          |
+| Our Restaurant Website | POST /chat     | AI-generated response |
+
+
+==========
+
+Chapter Summary
+Customer
+     │
+     ▼
+Restaurant Website
+     │
+     ▼
+HTTP Request
+     │
+     ▼
+Flask API
+     │
+     ▼
+Gemini AI
+     │
+     ▼
+HTTP Response
+     │
+     ▼
+Restaurant Website
+     │
+     ▼
+Customer
+Module 1 Progress
+Module 1 : Project Planning
+
+✅ Chapter 1 : Project Introduction
+✅ Chapter 2 : Restaurant Website Architecture
+✅ Chapter 3 : Client-Server Communication
+✅ Chapter 4 : REST API Fundamentals
+✅ Chapter 5 : HTTP Request & Response
+
+⬜ Chapter 6 : Flask Project Structure
+⬜ Chapter 7 : Gemini API Overview
+⬜ Chapter 8 : Voiceflow Overview
+⬜ Chapter 9 : Replit Overview
+⬜ Chapter 10 : Complete System Architecture
+Next Chapter
+Chapter 6 – Flask Project Structure
+
+In the next chapter, you'll learn how to organize a professional Flask application, why folders such as templates, static, services,
+and knowledge are needed, and how each file contributes to building a scalable AI Restaurant Ordering Website. This structure will make 
+the practical coding phase much easier.
+
+===============
+
+
+
